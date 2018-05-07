@@ -25,48 +25,6 @@ jQuery(function($) {
         return null;
     };
 
-    function prepareSubmissionData($form, submissionData) {
-        var userInput = {},
-            fields = [],
-            submissionFieldValuePairs = [],
-            fieldType,
-            label;
-
-        submissionData.forEach(function(fieldValue) {
-            var field = fieldValue.name,
-                value = fieldValue.value;
-
-            if (!userInput[field]) {
-                userInput[field] = {values: []};
-                userInput[field].values.push(value);
-                fields.push(field);
-            } else {
-                userInput[field].values.push(value);
-            }
-        });
-
-        for (var fieldName in userInput) {
-            fieldType = $form.find('.js-cmfs-field-wrapper[data-field-id='+fieldName+']').attr('data-field-type');
-
-            if (fieldType === 'checkbox' || fieldType === 'radio') {
-                label = $form.find('.js-cmfs-field-wrapper[data-field-id='+fieldName+'] .js-cmfs-main-label').text();
-                userInput[fieldName].label = label;
-            } else {
-                label = $form.find('label[for="'+fieldName+'"] .js-cmfs-main-label').text();
-                userInput[fieldName].label = label;
-            }
-        }
-
-        fields.forEach(function(field) {
-            var group = userInput[field];
-            group.field = field;
-
-            submissionFieldValuePairs.push(group);
-        });
-
-        return submissionFieldValuePairs;
-    }
-
     var _validateNonOptionFields = function($field) {
         var errors = $field.camouformsValidateField(),
             isInvalidForm = !_.isEmpty(errors);

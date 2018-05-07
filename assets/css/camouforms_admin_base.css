@@ -1,0 +1,18 @@
+#toplevel_page_camouforms .wp-menu-image::before {
+    width: 20px;
+    height: 20px;
+    content: url("../images/camouforms_form_icon.png");
+    opacity: 100;
+}
+
+#toplevel_page_camouforms.current .wp-menu-image::before {
+    width: 20px;
+    height: 20px;
+    content: url("../images/camouforms_form_icon_white.png");
+    opacity: 100;
+}
+
+#toplevel_page_camouforms .wp-menu-image:hover::before {
+    content: url("../images/camouforms_form_icon_blue.png");
+    opacity: 100;
+}

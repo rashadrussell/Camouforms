@@ -1,0 +1,363 @@
+/*********************************
+ * Dashboard Content
+ ********************************/
+.camouforms-dashboard {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.camouforms-dashboard .content {
+    margin-top: 50px;
+}
+
+.camouforms-form-listing,
+.camouforms-submissions-listing
+{
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 2px 1px #bbb;
+}
+
+.camouforms-submissions-listing .form-selector-row th {
+    padding: 10px 0px;
+    border: none;
+}
+
+.camouforms-form-listing thead .label-row,
+.camouforms-submissions-listing thead .label-row {
+    height: 35px;
+    font-size: 16px;
+    border-bottom: solid 1px #ccc;
+}
+
+.camouforms-form-listing tbody td,
+.camouforms-submissions-listing tbody td {
+    border-bottom: solid 1px #ccc;
+    padding: 10px 0px;
+}
+
+.camouforms-submissions-listing tbody tr:hover
+{
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+
+.camouforms-form-listing tbody tr:hover {
+    background-color: #dcdcdc;
+}
+
+.camouforms-form-listing tbody .form-name:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.camouforms-dashboard .left-column {
+    width: 600px;
+    float: left;
+}
+.camouforms-dashboard .right-column {
+    width: 600px;
+    float: right;
+}
+
+.camouforms-dashboard .camouforms-logo .main-text {
+    font-weight: bolder;
+}
+
+.camouforms-dashboard .camouforms-logo .secondary-text {
+    font-size: 16px;
+    color: #888;
+}
+
+.camouforms-dashboard .submissions-title,
+.camouforms-dashboard .forms-listing-title {
+    text-align: left;
+}
+
+.camouforms-new-form,
+.camouforms-create-modal .create-form-submit
+{
+    padding: 10px 50px;
+    margin: 0px auto;
+    display: table;
+    border-radius: 33px;
+    box-shadow: 1px 1px 4px 0px #888;
+    font-weight: bolder;
+    font-size: 14px;
+    color: #fff;
+    background-color: #569d5a;
+}
+
+.camouforms-new-form:hover,
+.camouforms-create-modal .create-form-submit:hover {
+    cursor: pointer;
+    background-color: #3a743e;
+}
+
+/*********************************
+ * Form Listings Table
+ ********************************/
+.camouforms-form-listing .form-name {
+    width: 55%;
+}
+
+.camouforms-form-listing .shortcode-label {
+    width: 40%;
+}
+
+.camouforms-form-listing .delete-form {
+    width: 5%;
+}
+
+.camouforms-form-listing .delete-form:hover {
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+/*********************************
+ * Modal Partial
+ ********************************/
+.camouforms-modal-transparency {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 8000;
+    display: none;
+    background-color: #000;
+    opacity: 0.7;
+}
+
+.camouforms-submission-modal {
+    width: 500px;
+    margin: 0px auto;
+    padding: 20px;
+    position: fixed;
+    z-index: 9000;
+    top: 200px;
+    left: 50%;
+    margin-left: -200px;
+    display: none;
+    background-color: #fff;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.camouforms-submission-modal .inner-wrapper {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.camouforms-submission-modal .submission-results {
+    width: 500px;
+}
+
+.camouforms-submission-modal th {
+    text-align: left;
+}
+
+
+.camouforms-submission-modal td {
+    vertical-align: top;
+    text-align: left
+}
+
+.camouforms-submission-modal .field-name {
+    width: 25%;
+}
+
+.camouforms-submission-modal .user-input {
+    width: 75%;
+}
+
+.camouforms-close-create-modal,
+.camouforms-close-submission-modal
+{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: -15px;
+    margin-right: -15px;
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px 0px #777;
+}
+
+.camouforms-close-create-modal:hover,
+.camouforms-close-submission-modal:hover
+{
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.camouforms-create-modal {
+    width: 250px;
+    height: 270px;
+    margin: 0px auto;
+    padding: 20px;
+    position: fixed;
+    z-index: 9000;
+    top: 200px;
+    left: 50%;
+    margin-left: -60px;
+    display: none;
+    background-color: #fff;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.camouforms-create-modal input,
+.camouforms-create-modal textarea {
+    width: 100%;
+}
+
+.camouforms-create-modal input {
+    height: 30px;
+}
+
+.camouforms-create-modal textarea {
+    height: 100px;
+    resize: none;
+}
+
+.camouforms-create-modal label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+.camouforms-create-modal .create-form-name-wrapper {
+    margin-bottom: 20px;
+}
+
+.camouforms-create-modal .create-form-description-wrapper {
+    margin-bottom: 20px;
+}
+
+.camouforms-create-modal .create-form-error,
+.camouforms-create-modal .create-form-name-error {
+    color: #ff0000;
+}
+
+.camouforms-create-modal .create-form-submit {
+
+}
+
+/*********************************
+ * Pagination
+ ********************************/
+
+.pagination li {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: solid 1px #ccc;
+}
+
+.pagination li:not(:last-child) {
+    margin-right: 5px;
+}
+
+.pagination li:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.pagination li a {
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.pagination li a:hover {
+    color: #0073aa;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #888;
+}
+
+.pagination .page-item.disabled:hover {
+    color: #888;
+    background-color: #fff;
+    cursor: not-allowed;
+}
+
+.pagination .page-item.disabled:hover .page-link {
+    color: #888;
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    cursor: default;
+    color: #fff;
+}
+
+.pagination .active:hover {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    cursor: default;
+    color: #fff;
+}
+
+.pagination .active .page-link {
+    color: #fff;
+}
+
+.pagination .active .page-link:hover {
+    cursor: default;
+}
+
+.pagination .next,
+.pagination .prev {
+    display: none;
+}
+
+/*********************************
+ * Table Loading
+ ********************************/
+.submissions-listing-wrapper {
+    position: relative;
+}
+
+.submissions-listing-wrapper .loading-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    color: #fff;
+}
+
+.submissions-listing-wrapper .transparency {
+    height: 100%;
+    background-color: #ccc;
+    opacity: 0.7;
+}
+
+.submissions-listing-wrapper .loading-screen-spinner {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 101;
+    color: #fff;
+}

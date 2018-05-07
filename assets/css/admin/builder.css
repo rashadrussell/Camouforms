@@ -1,0 +1,293 @@
+/***********************************
+ * Form Builder Top Nav
+ ***********************************/
+ .cmfs-top-nav {
+    position: fixed;
+    top: 32px;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.cmfs-top-nav a {
+    width: 100px;
+    height: 40px;
+    display: block;
+    float: left;
+    line-height: 40px;
+    background-color: #008e19;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: solid 3px green;
+    font-weight: bold;
+    font-family: helvetica, arial, sans-serif;
+}
+
+.cmfs-top-nav a:first-child {
+    border-bottom-left-radius: 4px;
+}
+
+.cmfs-top-nav a:last-child {
+    border-bottom-right-radius: 4px;
+}
+
+.cmfs-top-nav a:not(:last-child) {
+    border-right: solid 1px green;
+}
+
+.cmfs-top-nav a:hover {
+    background-color: #30ae46;
+    border-bottom-color: #30ae46;
+    cursor: pointer;
+}
+
+
+/***********************************
+ * Form Builder Canvas
+ ***********************************/
+.cmfs-canvas {
+    width: 400px;
+    min-height: 75px;
+    margin-top: 100px;
+    margin-left: 250px;
+    border-radius: 2px;
+}
+
+.cmfs-field-wrapper {
+    position: relative;
+    border: dashed 2px rgba(0,0,0,0);
+}
+
+.cmfs-field-wrapper:hover {
+    border: dashed 2px #aaa;
+}
+
+.js-cmfs-remove-field {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background-color: #fff;
+    border-radius: 100%;
+    line-height: 25px;
+    text-align: center;
+    box-shadow: 1px 1px 4px 0px #888;
+}
+
+.js-cmfs-remove-field:hover {
+    cursor: pointer;
+}
+
+/***********************************
+ * Toolster
+ ***********************************/
+.toolster-template {
+    display: none;
+}
+
+.sortable-placeholder-ghost {
+    height: 40px;
+    background-color: #ddd;
+}
+
+/***********************************
+ * Form Builder Sidebar
+ ***********************************/
+
+.cmfs-sidebar {
+    width: 302px;
+    height: 100%;
+    position: fixed;
+    top: 32px;
+    right: 0px;
+    background-color: #d3d3d3;
+    color: #23282d;
+}
+
+.cmfs-sidebar .button-bar {
+    overflow: hidden;
+}
+
+.cmfs-sidebar .button-bar-button {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-bottom: solid 1px #383838;
+    text-align: center;
+}
+
+.cmfs-sidebar .button-bar-button:hover {
+    background-color: #252525;
+    cursor: pointer;
+    color: #fff;
+}
+
+.cmfs-sidebar .button-bar-button.selected {
+    background-color: #252525;
+    color: #fff;
+}
+
+.cmfs-sidebar .button-bar-button-middle {
+    border-left: solid 1px #383838;
+    border-right: solid 1px #383838;
+}
+
+.cmfs-sidebar .button-group {
+    width: 100%;
+    background-color: #252525;
+    border-bottom: solid 0.5px #383838;
+    color: #fff;
+}
+
+.cmfs-sidebar .button-group:hover {
+    cursor: pointer;
+    background-color: #444;
+}
+
+.cmfs-sidebar .button-group .field-button {
+    width: 100%;
+    height: 40px;
+    display: block;
+    border: none;
+    padding: 0px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.cmfs-sidebar .field-button .button-icon {
+    height: 100%;
+    padding: 0px 15px;
+    float: left;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.cmfs-sidebar .field-button .button-title {
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.cmfs-sidebar .field-section {
+    display: none;
+}
+
+.cmfs-sidebar .field-section .section-title {
+    padding-left: 15px;
+}
+
+.cmfs-sidebar .field-section.selected {
+    display: block;
+}
+
+/**
+ * Edit Field Section
+ */
+.cmfs-sidebar .edit-field-section {
+    padding: 15px;
+}
+
+.cmfs-sidebar .edit-field-section .settings-row {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cmfs-sidebar .edit-field-section .settings-row .min-column,
+.cmfs-sidebar .edit-field-section .settings-row .max-column
+{
+    width: 100px;
+    display: inline-block;
+}
+
+.cmfs-sidebar .edit-field-section .editor-label {
+    margin-bottom: 4px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cmfs-sidebar .edit-field-section input[type='text'],
+.cmfs-sidebar .edit-field-section input[type='number'],
+.cmfs-sidebar .edit-field-section .options-item-editor
+ {
+    width: 100%;
+    padding: 10px 7px;
+    border: solid 1px #ccc;
+    border-radius: 1px;
+    font-size: 13px;
+}
+
+.cmfs-sidebar .edit-field-section .options-item-editor {
+    min-height: 200px;
+}
+
+.cmfs-sidebar .edit-field-section input[type='number'] {
+    width: 100%;
+}
+
+.cmfs-sidebar .edit-field-section input[type='checkbox']
+ {
+    border: solid 1px #ccc;
+    border-radius: 2px;
+}
+
+ /**
+ * Form Settings Section
+ */
+.cmfs-sidebar .form-settings-section {
+    padding: 15px;
+}
+
+.cmfs-sidebar .form-settings-section .settings-row {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cmfs-sidebar .form-settings-section .editor-label {
+    margin-bottom: 4px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cmfs-sidebar .form-settings-section input[type='text'],
+.cmfs-sidebar .form-settings-section textarea
+ {
+    width: 100%;
+    padding: 10px 7px;
+    border: solid 1px #ccc;
+    border-radius: 1px;
+    font-size: 13px;
+}
+
+.cmfs-sidebar .form-settings-section textarea {
+    min-height: 100px;
+}
+
+
+ /**
+ * Form Save Status
+ */
+
+.cmfs-form-save-success {
+    padding: 10px;
+    position: fixed;
+    top: 40px;
+    right: 350px;
+    background-color: #18a118;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.cmfs-form-save-fail {
+    padding: 10px;
+    position: fixed;
+    top: 40px;
+    right: 350px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 2px;
+}

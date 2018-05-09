@@ -2,10 +2,15 @@
     if (!defined( 'ABSPATH')) exit; // Exit if accessed directly
 
     global $wpdb, $forms_table_name;
-    $formId = $_GET['id'];
-    $formData = $wpdb->get_row("SELECT id, form_html FROM $forms_table_name WHERE id=$formId");
+    $form_id = $_GET['id'];
 
-    if (is_null($formData)) {
+    if (!ctype_digit($form_id)) {
+        return '';
+    }
+
+    $form_data = $wpdb->get_row("SELECT id, form_html FROM $forms_table_name WHERE id=$form_id");
+
+    if (is_null($form_data)) {
         return '';
     }
 ?>
@@ -14,9 +19,9 @@
     <form
         id="sortable"
         class="camouforms-form js-cmfs-form"
-        data-form-id=<?php echo($formId); ?>
+        data-form-id=<?php echo($form_id); ?>
     >
-        <?php echo(stripcslashes($formData->form_html)); ?>
+        <?php echo(stripcslashes($form_data->form_html)); ?>
     </form>
 </div>
 

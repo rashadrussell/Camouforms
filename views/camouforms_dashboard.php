@@ -20,40 +20,44 @@
 
     <div class="content">
         <div class="left-column">
-            <h3 class="submissions-title">Submissions</h3>
-            <?php require_once('partials/paginated-table/paginated-table.php'); ?>
+            <div class="left-column-inner">
+                <h3 class="submissions-title">Submissions</h3>
+                <?php require_once('partials/paginated-table/paginated-table.php'); ?>
+            </div>
         </div>
         <div class="right-column">
-        <h3 class="forms-listing-title">Your Forms</h3>
-            <table class="camouforms-form-listing">
-                <thead>
-                    <tr class="label-row">
-                        <th class="form-name">Form</th>
-                        <th class="shortcode-label">Shortcode</th>
-                        <th class="delete-form"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        foreach($forms as $key => $formData) {
-                    ?>
-                        <tr class="form-row js-form-row">
-                            <td
-                                class="form-name js-listing-form-name"
-                                data-form-id=<?php echo $formData->id; ?>
-                            >
-                                <?php echo $formData->form_name; ?>
-                            </td>
-                            <td class="form-shortcode">[camouforms id='<?php echo $formData->id; ?>']</td>
-                            <td class="delete-form js-delete-form" data-form-id=<?php echo $formData->id; ?>>
-                                <i class="fas fa-trash"></i>
-                            </td>
+            <div class="right-column-inner">
+                <h3 class="forms-listing-title">Your Forms</h3>
+                <table class="camouforms-form-listing">
+                    <thead>
+                        <tr class="label-row">
+                            <th class="form-name">Form</th>
+                            <th class="shortcode-label">Shortcode</th>
+                            <th class="delete-form"></th>
                         </tr>
-                    <?php
-                        }
-                    ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach($forms as $key => $formData) {
+                        ?>
+                            <tr class="form-row js-form-row">
+                                <td
+                                    class="form-name js-listing-form-name"
+                                    data-form-id=<?php echo $formData->id; ?>
+                                >
+                                    <?php echo $formData->form_name; ?>
+                                </td>
+                                <td class="form-shortcode">[camouforms id='<?php echo $formData->id; ?>']</td>
+                                <td class="delete-form js-delete-form" data-form-id=<?php echo $formData->id; ?>>
+                                    <i class="fas fa-trash"></i>
+                                </td>
+                            </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

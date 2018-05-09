@@ -101,6 +101,29 @@ function camouforms_sanitize_html($html) {
 }
 
 
+function camouforms_validate_form_meta_data($meta_data) {
+    $errors = array();
+
+    if (!is_numeric($meta_data['fieldElementId'])) {
+        array_push($errors, $meta_data['fieldElementId']);
+    }
+
+    if (!array_key_exists('fieldSettings', $meta_data)) {
+        array_push($errors, 'Missing field settings.');
+    }
+
+    if (!array_key_exists('formSettings', $meta_data)) {
+        array_push($errors, 'Missing form settings.');
+    }
+
+    if (count($meta_data) != 3) {
+        array_push($errors, 'Invalid meta data format.');
+    }
+
+    return count($errors) == 0;
+}
+
+
 function camouforms_install() {
     global $wpdb, $forms_table_name, $submissions_table_name, $preview_forms_table_name;
 
@@ -491,9 +514,13 @@ function camouforms_save_form_html() {
 
     $form_id = $_POST['form_id'];
     $form_html = camouforms_sanitize_html(stripslashes($_POST['form_html']));
-    $form_meta_data = $_POST['form_meta_data'];
+    $form_meta_data = stripcslashes($_POST['form_meta_data']);
     $form_name = sanitize_text_field($_POST['form_name']);
     $form_description = sanitize_textarea_field($_POST['form_description']);
+
+    if (!camouforms_validate_form_meta_data(json_decode($form_meta_data, true))) {
+        wp_die(json_encode(array('failed'=>__('Invalid meta data'))));
+    }
 
     if (!ctype_digit($form_id))
     {
@@ -514,11 +541,17 @@ function camouforms_save_form_html() {
     $wpdb->query("REPLACE INTO $preview_forms_table_name (form_id, form_html) VALUES ('$form_id', '$form_html')");
 
     if ($was_updated == false) {
-        wp_die('Saved Form, Complete!. Form was updated: false');
+        wp_die(json_encode(array(
+            'failed' => 'Form was not saved.'
+        )));
     } else if ($was_updated == 0) {
-        wp_die('Saved Form, Complete!. Form was updated: 0');
+        wp_die(json_encode(array(
+            'failed' => 'Form was not saved.'
+        )));
     } else {
-        wp_die('Saved Form, Complete!. Form was updated: true');
+        wp_die(json_encode(array(
+            'success' => 'Form was saved.'
+        )));
     }
 }
 
@@ -625,6 +658,10 @@ function camouforms_form_submit() {
 
     if (!ctype_digit($form_id))
     {
+        wp_die(json_encode(array('failed'=>__('Invalid Form ID'))));
+    }
+
+    if ($preview_id && !ctype_digit($preview_id)) {
         wp_die(json_encode(array('failed'=>__('Invalid Form ID'))));
     }
 

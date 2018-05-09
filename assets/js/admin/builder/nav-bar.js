@@ -44,8 +44,15 @@ var CamouformsApp = CamouformsApp || {};
                 form_name: formName,
                 form_description: formDescription
             },
-            success: function() {
-                formSaveSuccessResponse();
+            success: function(res) {
+                var data = JSON.parse(res);
+
+                if (data['success']) {
+                    formSaveSuccessResponse();
+                } else {
+                    formSaveFailResponse();
+                }
+
             },
             error: function() {
                 formSaveFailResponse();
